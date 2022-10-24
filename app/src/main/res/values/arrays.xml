@@ -14,9 +14,9 @@
 
     <string-array name="id_activityScreenTitles">
         <item></item>
-        <item>BashBoard</item>
-        <item>My Profile</item>
-        <item>learby Restaurants</item>
+        <item>Dashboard</item>
+        <item>Data Usage</item>
+        <item>New Users</item>
         <item>Settings</item>
         <item>About Us</item>
         <item/>
