@@ -1,4 +1,4 @@
-package com.eljem.firetics
+package com.eljem.firetics.view.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import com.eljem.firetics.view.drawer.DrawerAdapter
@@ -12,11 +12,13 @@ import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.appcompat.widget.Toolbar
+import com.eljem.firetics.R
 import com.eljem.firetics.databinding.ActivityMainBinding
 import com.eljem.firetics.view.dataUsage.DataUsageFragment
 import com.eljem.firetics.view.drawer.DrawerItem
 import com.eljem.firetics.view.drawer.SimpleItem
 import com.eljem.firetics.view.drawer.SpaceItem
+import com.eljem.firetics.view.newusers.NewUserFragment
 import java.util.*
 
 class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
@@ -49,11 +51,11 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
             Arrays.asList(
                 createItemFor(POS_CLOSE),
                 createItemFor(POS_DASHBOARD).setChecked(true),
-                createItemFor(POS_ACCOUNT),
-                createItemFor(POS_MESSAGES),
-                createItemFor(POS_CART),
+                createItemFor(POS_DATAUSAGE),
+                createItemFor(POS_NEWUSERS),
+
                 SpaceItem(48),
-                createItemFor(POS_LOGOUT)
+
             )
         )
         adapter.setListener(this)
@@ -108,12 +110,20 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
     override fun onItemSelected(position: Int) {
         val transaction = supportFragmentManager.beginTransaction()
         if (position == POS_DASHBOARD) {
+
+            val dashboardFragment = DashboardFragment()
+            transaction.replace(R.id.container, dashboardFragment)
+
+        } else if (position == POS_DATAUSAGE) {
             val dataUsageFragment = DataUsageFragment()
             transaction.replace(R.id.container, dataUsageFragment)
-        } else if (position == POS_ACCOUNT) {
+
+        }
+         else if (position == POS_NEWUSERS)
+        {
             val newUserFragment = NewUserFragment()
             transaction.replace(R.id.container, newUserFragment)
-        } else if (position == POS_CLOSE) {
+        }else if (position == POS_CLOSE) {
 
         }
         slidingRootNav!!.closeMenu()
@@ -132,9 +142,8 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
     companion object {
         private const val POS_CLOSE = 0
         private const val POS_DASHBOARD = 1
-        private const val POS_ACCOUNT = 2
-        private const val POS_MESSAGES = 3
-        private const val POS_CART = 4
-        private const val POS_LOGOUT = 5
+        private const val POS_DATAUSAGE = 2
+        private const val POS_NEWUSERS = 3
+
     }
 }
