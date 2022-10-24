@@ -19,6 +19,7 @@ import com.eljem.firetics.view.drawer.DrawerItem
 import com.eljem.firetics.view.drawer.SimpleItem
 import com.eljem.firetics.view.drawer.SpaceItem
 import com.eljem.firetics.view.newusers.NewUserFragment
+import com.eljem.firetics.view.project.AddNewProjectFragment
 import java.util.*
 
 class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(POS_DATAUSAGE),
                 createItemFor(POS_NEWUSERS),
-
+                createItemFor(POS_NEW_FIREBASE),
                 SpaceItem(48),
 
             )
@@ -123,6 +124,11 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         {
             val newUserFragment = NewUserFragment()
             transaction.replace(R.id.container, newUserFragment)
+        }
+        else if (position == POS_NEW_FIREBASE)
+        {
+            val addNewProjectFragment = AddNewProjectFragment()
+            transaction.replace(R.id.container, addNewProjectFragment)
         }else if (position == POS_CLOSE) {
 
         }
@@ -144,6 +150,7 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         private const val POS_DASHBOARD = 1
         private const val POS_DATAUSAGE = 2
         private const val POS_NEWUSERS = 3
+        private const val POS_NEW_FIREBASE = 4
 
     }
 }

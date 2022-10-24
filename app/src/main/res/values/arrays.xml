@@ -5,10 +5,8 @@
         <item>@drawable/ic_home_white</item>
         <item>@drawable/ic_data_white</item>
         <item>@drawable/ic_customer</item>
-        <item>@drawable/ic_customer</item>
-        <item>@drawable/ic_customer</item>
-        <item>0</item>
-        <item>@drawable/ic_home_white</item>
+        <item>@drawable/ic_firebase</item>
+
 
     </string-array>
 
@@ -17,10 +15,8 @@
         <item>Dashboard</item>
         <item>Data Usage</item>
         <item>New Users</item>
-        <item>Settings</item>
-        <item>About Us</item>
-        <item/>
-        <item>Logout</item>
+        <item>New Project</item>
+
 
     </string-array>
 </resources>

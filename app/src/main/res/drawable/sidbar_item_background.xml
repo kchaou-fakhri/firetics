@@ -3,9 +3,8 @@
     >
 
     <corners
-        android:bottomRightRadius="25dp"
-        android:topRightRadius="25dp"
-       
+       android:radius="100dp"
+
        />
 
     <!--If your shape requires only one solid color-->
