@@ -12,6 +12,8 @@ import com.eljem.firetics.BuildConfig
 import com.eljem.firetics.R
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestoreSettings
@@ -30,7 +32,9 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        connectToFireBase()
+
+
+
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 

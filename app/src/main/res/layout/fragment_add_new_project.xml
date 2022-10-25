@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.project.AddNewProjectFragment">
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/project_id"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Project ID"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:hintTextColor="@color/primary_color"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxStrokeColor="@color/secand_color"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/project_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Project ID"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/secand_color"
+            app:hintTextColor="@color/primary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/project_name"
@@ -81,34 +84,195 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_connect"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_connect"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="32dp"
 
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/secand_color"
-        android:radius="150dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/secand_color"
 
-        android:text="Connect"
+            android:radius="150dp"
 
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+            android:text="Connect"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            app:cornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fr_storage" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Project shortcuts"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/api_key"
         app:layout_constraintTop_toBottomOf="@+id/api_key" />
 
+        <CheckBox
+            android:id="@+id/fr_firestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Firestore Database"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:enabled="false"
+            android:buttonTint="@color/primary_color"
+            app:layout_constraintStart_toStartOf="@+id/api_key"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <CheckBox
+        android:id="@+id/fr_realtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Realtime Database"
+        android:buttonTint="@color/primary_color"
+        app:layout_constraintStart_toStartOf="@+id/fr_firestore"
+        app:layout_constraintTop_toBottomOf="@+id/fr_firestore" />
+
+    <CheckBox
+
+        android:id="@+id/fr_authentication"
+        android:layout_width="wrap_content"
+        android:text="Authentication"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/primary_color"
+        app:layout_constraintStart_toStartOf="@+id/fr_firestore"
+        app:layout_constraintTop_toBottomOf="@+id/fr_realtime" />
+
+    <CheckBox
+
+
+        android:id="@+id/fr_storage"
+        android:text="Firebase Storage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/primary_color"
+        app:layout_constraintStart_toStartOf="@+id/fr_firestore"
+        app:layout_constraintTop_toBottomOf="@+id/fr_authentication" />
+
+        <ImageView
+            android:id="@+id/img_firestore"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_connection_ok"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_firestore"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toEndOf="@+id/fr_firestore"
+            app:layout_constraintTop_toTopOf="@+id/fr_firestore" />
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit_firestore"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/secand_color"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_firestore"
+            android:visibility="gone"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toEndOf="@+id/fr_firestore"
+            app:layout_constraintTop_toTopOf="@+id/fr_firestore"
+            />
+        <ImageView
+            android:id="@+id/img_realtime_db"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_connection_ok"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_realtime"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/img_firestore"
+
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="@+id/img_firestore"
+            app:layout_constraintTop_toBottomOf="@+id/fr_firestore" />
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit_realtime_db"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/secand_color"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_realtime"
+            android:visibility="gone"
+
+            app:layout_constraintEnd_toEndOf="@+id/img_firestore"
+
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="@+id/img_firestore"
+            app:layout_constraintTop_toBottomOf="@+id/fr_firestore"
+            />
+
+        <ImageView
+            android:id="@+id/img_auth"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:visibility="gone"
+
+            android:src="@drawable/ic_connection_ok"
+            app:layout_constraintBottom_toTopOf="@+id/fr_storage"
+            app:layout_constraintEnd_toEndOf="@+id/img_realtime_db"
+            app:layout_constraintTop_toBottomOf="@+id/fr_realtime" />
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit_auth"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+
+            app:SpinKit_Color="@color/secand_color"
+            app:layout_constraintBottom_toTopOf="@+id/fr_storage"
+            app:layout_constraintEnd_toEndOf="@+id/img_realtime_db"
+            app:layout_constraintTop_toBottomOf="@+id/fr_realtime"
+            />
+
+        <ImageView
+            android:id="@+id/img_storage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_connection_ok"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_storage"
+            app:layout_constraintEnd_toEndOf="@+id/img_auth"
+
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="@+id/img_auth"
+            app:layout_constraintTop_toBottomOf="@+id/fr_authentication"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit_storage"
+            style="@style/SpinKitView.Large.FadingCircle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/secand_color"
+            app:layout_constraintBottom_toBottomOf="@+id/fr_storage"
+            app:layout_constraintEnd_toEndOf="@+id/img_auth"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="@+id/img_auth"
+            app:layout_constraintTop_toBottomOf="@+id/fr_authentication"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

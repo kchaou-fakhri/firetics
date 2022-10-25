@@ -1,7 +1,6 @@
 package com.eljem.firetics.model.data.remote
 
-import android.app.Application
-import android.content.ContentValues
+
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
@@ -11,10 +10,16 @@ import com.eljem.firetics.BuildConfig
 import com.eljem.firetics.model.entity.Project
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.app
+import com.google.firebase.storage.ktx.storage
 
 class ProjectRemote {
+
     fun connectToFireBase(project: Project,context: Context): LiveData<Boolean> {
 
         var multableLiveData = MutableLiveData<Boolean>()
@@ -34,6 +39,9 @@ class ProjectRemote {
             "last" to "Lovelace",
             "born" to 1815
         )
+
+
+
         db.collection("test").add(user)
             .addOnSuccessListener { documentReference ->
                 multableLiveData.value = true
