@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
+    id 'kotlin-kapt'
 
 }
 
@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId "com.eljem.firetics"
-        minSdk 24
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -71,6 +71,19 @@ dependencies {
 
     implementation 'com.yarolegovich:sliding-root-nav:1.1.1'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+
+    //room implementation
+    def room_version = "2.4.3"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:2.4.3"
+    implementation 'androidx.room:room-ktx:2.4.3'
+
+
+
 
 
 }
