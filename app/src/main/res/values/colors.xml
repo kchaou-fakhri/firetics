@@ -11,4 +11,5 @@
     <color name="primary_color">#FFB200</color>
     <color name="secand_color">#277BC0</color>
     <color name="gary_200">#DDDDDD</color>
+    <color name="grey">#c3c3c3</color>
 </resources>

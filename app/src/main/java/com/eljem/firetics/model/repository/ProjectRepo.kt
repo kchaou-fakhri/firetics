@@ -35,6 +35,10 @@ class ProjectRepo(private val database : ProjectIDAO) {
         return database.insertProject(project)
     }
 
+    suspend fun updateProject( project : Project){
+        return database.updateProject(project)
+    }
+
     fun getAllProjects() : LiveData<List<Project>>{
         return database.getAllProjects()
     }

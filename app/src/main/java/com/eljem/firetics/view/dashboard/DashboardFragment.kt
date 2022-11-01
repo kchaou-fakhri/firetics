@@ -38,55 +38,8 @@ class DashboardFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
-    fun connectToFireBase(){
-        val options1 = FirebaseOptions.Builder()
-            .setProjectId("madina-27539")
-            .setApplicationId(BuildConfig.APPLICATION_ID)
-            .setApiKey("AIzaSyDiqRyQathvWiN7PQ3BtCVL1hmybrkVJWs")
-
-            .build()
-
-        val options2 = FirebaseOptions.Builder()
-            .setProjectId("e-learning-cd263")
-            .setApplicationId(BuildConfig.APPLICATION_ID)
-            .setApiKey("AIzaSyDD5w1xBL-DNcn_F4kEzkSaVRvFipkQRVg") // setDatabaseURL(...)
-            // setStorageBucket(...)
-            .build()
-        // [END firebase_options]
-
-
-        // [START firebase_secondary]
-        // Initialize with secondary app
-        // [END firebase_options]
-
-
-        // [START firebase_secondary]
-        // Initialize with secondary app
-        FirebaseApp.initializeApp(requireContext() /* Context */, options1, "first")
-        FirebaseApp.initializeApp(requireContext() /* Context */, options2, "secondary")
-
-
-        val first = FirebaseApp.getInstance("first")
-        val secondary = FirebaseApp.getInstance("secondary")
-
-
-        val db = Firebase.firestore(secondary)
-
-//        val user = hashMapOf(
-//            "first" to "Ada",
-//            "last" to "Lovelace",
-//            "born" to 1815
-//        )
-//        db.collection("ussssssssers")
-//            .add(user)
-//            .addOnSuccessListener { documentReference ->
-//                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                Log.w(TAG, "Error adding document", e)
-//            }
 
 
 
-    }
+
 }

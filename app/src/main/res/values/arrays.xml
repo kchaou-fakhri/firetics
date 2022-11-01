@@ -6,6 +6,7 @@
         <item>@drawable/ic_data_white</item>
         <item>@drawable/ic_customer</item>
         <item>@drawable/ic_firebase</item>
+        <item>@drawable/ic_project</item>
 
 
     </string-array>
@@ -16,6 +17,7 @@
         <item>Data Usage</item>
         <item>New Users</item>
         <item>New Project</item>
+        <item>Projects</item>
 
 
     </string-array>

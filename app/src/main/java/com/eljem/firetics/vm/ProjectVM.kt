@@ -43,6 +43,12 @@ class ProjectVM(application : Application) : AndroidViewModel(application){
         }
     }
 
+    fun updateProject(project: Project){
+        viewModelScope.launch(Dispatchers.IO){
+            projectRepo.updateProject(project)
+        }
+    }
+
 
     fun getAllProjects() :LiveData<List<Project>>{
         return projectRepo.getAllProjects()

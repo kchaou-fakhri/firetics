@@ -20,6 +20,7 @@ import com.eljem.firetics.view.drawer.SimpleItem
 import com.eljem.firetics.view.drawer.SpaceItem
 import com.eljem.firetics.view.newusers.NewUserFragment
 import com.eljem.firetics.view.project.AddNewProjectFragment
+import com.eljem.firetics.view.project.ListProjectFragment
 import java.util.*
 
 class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
@@ -55,6 +56,8 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
                 createItemFor(POS_DATAUSAGE),
                 createItemFor(POS_NEWUSERS),
                 createItemFor(POS_NEW_FIREBASE),
+                createItemFor(POS_PROJECTS),
+
                 SpaceItem(48),
 
             )
@@ -72,7 +75,7 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
             screenIcons[position],
             screenTitles[position]
         )
-            .withIconTint(color(R.color.primary_color))
+//            .withIconTint(color(R.color.primary_color))
             .withTextTint(color(R.color.text_color))
             .withSelectedIconTint(color(R.color.secand_color))
             .withSelectedTextTint(color(R.color.secand_color))
@@ -129,7 +132,13 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         {
             val addNewProjectFragment = AddNewProjectFragment()
             transaction.replace(R.id.container, addNewProjectFragment)
-        }else if (position == POS_CLOSE) {
+        }
+        else if (position == POS_PROJECTS)
+        {
+            val listProjectFragment = ListProjectFragment()
+            transaction.replace(R.id.container, listProjectFragment)
+        }
+        else if (position == POS_CLOSE) {
 
         }
         slidingRootNav!!.closeMenu()
@@ -151,6 +160,7 @@ class MainActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         private const val POS_DATAUSAGE = 2
         private const val POS_NEWUSERS = 3
         private const val POS_NEW_FIREBASE = 4
+        private const val POS_PROJECTS = 5
 
     }
 }

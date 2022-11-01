@@ -1,11 +1,7 @@
 package com.eljem.firetics.model.data.local.IDAO
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.eljem.firetics.model.entity.Project
 
 @Dao
@@ -22,4 +18,7 @@ interface ProjectIDAO {
 
     @Query("SELECT * FROM project WHERE name = :name OR projectID = :id OR apiKey = :apikey")
     fun getById(name : String, id : String, apikey : String) : LiveData<Project>
+
+    @Update
+    suspend fun updateProject(project: Project)
 }

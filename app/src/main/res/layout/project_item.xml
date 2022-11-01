@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+
+
+
+
+    >
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:elevation="10dp">
+
+            <TextView
+                android:background="@color/secand_color"
+                android:id="@+id/project_icon"
+                android:text="E"
+                android:textSize="18sp"
+                android:paddingVertical="8dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:src="@drawable/profile_image"
+
+
+                />
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="wrap_content" android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/card_icon">
+            <!--text view for displaying our note text-->
+            <TextView
+                android:id="@+id/project_name"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="0dp"
+                android:paddingLeft="15dp"
+                android:text="e-learning"
+                android:textColor="#454548"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/created_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerVertical="true"
+
+                android:layout_marginTop="3dp"
+                android:textSize="10sp"
+                android:layout_marginBottom="0dp"
+                android:paddingLeft="15dp"
+                android:text="16-12-2022 : 16:14:33"
+                android:textColor="#8b8b8b"
+
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--text view for displaying our last updated text-->
+
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/btn_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:theme="@style/SwitchCompatTheme"
+      />
+        <!--imageview for displaying delete icon-->
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

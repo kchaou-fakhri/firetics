@@ -244,7 +244,7 @@ class AddNewProjectFragment : Fragment() {
 
             }
             else{
-                checkConnectionStatus()
+                ifProjectExist()
             }
         }
 
@@ -278,11 +278,18 @@ class AddNewProjectFragment : Fragment() {
 
         var verif = true
         for (item : Project in listProjects){
-            if (item.name == project.name || item.projectID == project.projectID || item.apiKey == project.projectID){
+            if (item.name == project.name || item.projectID == project.projectID || item.apiKey == project.apiKey){
                 verif = false
             }
         }
         return verif
+    }
+
+    private fun ifProjectExist(){
+
+                    val failureAlert = FalureAlert(requireActivity(),"Project already exist, please insert a new project", "Sorry")
+                    failureAlert.startLoadingAlert()
+
     }
 
 }
